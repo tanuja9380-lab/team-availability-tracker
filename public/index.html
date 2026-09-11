@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Team Availability Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div>
+                <h1>👥 Team Availability</h1>
+                <p>Real-time team status dashboard</p>
+            </div>
+
+            <div class="live">
+                <span></span>
+                LIVE
+            </div>
+        </header>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span class="stat-icon">🟢</span>
+                <div>
+                    <strong id="available-count">0</strong>
+                    <p>Available</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">🟡</span>
+                <div>
+                    <strong id="busy-count">0</strong>
+                    <p>Busy</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">🔴</span>
+                <div>
+                    <strong id="away-count">0</strong>
+                    <p>Away</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">👥</span>
+                <div>
+                    <strong id="total-count">0</strong>
+                    <p>Total Members</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="add-section">
+
+            <h2>Add Team Member</h2>
+
+            <form id="member-form">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Member name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="Role"
+                    required
+                >
+
+                <button type="submit">
+                    + Add Member
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="team-section">
+
+            <div class="section-title">
+                <div>
+                    <h2>Team Members</h2>
+                    <p>Update a member's availability below</p>
+                </div>
+
+                <button id="refresh-btn" class="refresh-btn">
+                    🔄 Refresh
+                </button>
+            </div>
+
+            <div id="team-grid" class="team-grid">
+                <div class="loading">
+                    Loading team members...
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Auto-refreshing every 5 seconds • Backend synchronized</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
